@@ -18,3 +18,9 @@ fn runs_success() {
     let res = cmd.output();
     assert!(res.is_ok())
 }
+
+#[test]
+fn true_ok() {
+    let mut cmd = Command::cargo_bin("true").unwrap();
+    cmd.assert().success();
+}
